@@ -3,6 +3,8 @@ A Matchmaking Service for Basketball-Loving Individuals with Disability
   
 <img width="1381" alt="Image" src="https://github.com/user-attachments/assets/73eda48c-169f-4caf-91dd-e2d7e9c064c9" />
 
+<img width="1422" alt="Image" src="https://github.com/user-attachments/assets/667372e5-beb6-46a6-8865-486969c5d22c" />
+
 
 ## 📋 프로젝트 정보
 - **팀명**: 리바운드 조 (11조)
