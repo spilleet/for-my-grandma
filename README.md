@@ -1,5 +1,8 @@
 # 장애인을 위한 농구 참여 플랫폼
 A Matchmaking Service for Basketball-Loving Individuals with Disability
+  
+<img width="1381" alt="Image" src="https://github.com/user-attachments/assets/73eda48c-169f-4caf-91dd-e2d7e9c064c9" />
+
 
 ## 📋 프로젝트 정보
 - **팀명**: 리바운드 조 (11조)
