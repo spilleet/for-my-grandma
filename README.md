@@ -41,7 +41,7 @@ A Matchmaking Service for Basketball-Loving Individuals with Disability
   - 이동욱: https://github.com/spilleet/
   - 박찬엽: https://github.com/parkchan0207
   - 박재광: https://github.com/jkpark-9997/jkpark--project.git
-  - 김진영: https://youtu.be/tkkbYCajCjM?si=SvRC4TkU2ERc-U9G
+  - 김진영: https://github.com/keemjinyoung
   - 김성현: https://github.com/kimsunghyun77
 
 ## 🛠️ 기술 스택
