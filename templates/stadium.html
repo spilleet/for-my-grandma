@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>경기장 등록</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <form action="{{ url_for('stadium_register') }}" method="post" class="form-container active">
+    <div class="form-header">경기장 등록</div>
+    <div class="form-body">
+      <label>경기장명<br/><input type="text" name="stadium-name" placeholder="경기장명을 입력하세요" required /></label>
+      <label>위치<br/><input type="text" name="stadium-location" placeholder="장소를 입력하세요" required /></label>
+      <label>수용 인원<br/><input type="number" name="stadium-capacity" placeholder="예: 5000" required /></label>
+      <div class="btn-group">
+        <button type="submit" class="btn primary">등록하기</button>
+        <a href="{{ url_for('dashboard') }}" class="btn secondary">대시보드</a>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

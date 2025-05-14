@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>경기 등록</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <form action="{{ url_for('match_register') }}" method="post" class="form-container active">
+    <div class="form-header">경기 매치 등록</div>
+    <div class="form-body">
+      <label>경기명<br/><input type="text" name="match-name" /></label>
+      <label>경기 일시<br/><input type="datetime-local" name="match-date" /></label>
+      <label>장소<br/><input type="text" name="match-location" /></label>
+      <label>팀1<br/><input type="text" name="match-team1" /></label>
+      <label>팀2<br/><input type="text" name="match-team2" /></label>
+      <div class="btn-group">
+        <button type="submit" class="btn primary">등록하기</button>
+        <button type="button" class="btn secondary" onclick="location.href='{{ url_for('dashboard') }}'">대시보드</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
+

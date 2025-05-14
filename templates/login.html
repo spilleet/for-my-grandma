@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>로그인</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <form action="{{ url_for('do_login') }}" method="post" class="form-container active">
+    <div class="form-header">로그인</div>
+    <div class="form-body">
+      <label>
+        아이디<br/>
+        <input type="text" name="login-id" placeholder="아이디를 입력하세요" required />
+      </label>
+      <label>
+        비밀번호<br/>
+        <input type="password" name="login-pw" placeholder="비밀번호를 입력하세요" required />
+      </label>
+      <div class="btn-group">
+        <button type="submit" class="btn primary">로그인</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>경기 목록</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <div class="form-container active">
+    <div class="form-header">등록된 경기 목록</div>
+    <div class="form-body">
+      {% if matches %}
+        <ul>
+          {% for m in matches %}
+            <li>
+              <strong>{{ m.name }}</strong> |
+              {{ m.date }} |
+              {{ m.location }} |
+              {{ m.team1 }} vs {{ m.team2 }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>등록된 경기가 없습니다.</p>
+      {% endif %}
+      <div class="btn-group">
+        <a href="{{ url_for('dashboard') }}" class="btn secondary">대시보드</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

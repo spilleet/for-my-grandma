@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>메인 대시보드</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div id="dashboard-box" class="form-container active">
+    <!-- 플래시 메시지를 컨테이너 안 상단에 배치 -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash">
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <div class="form-header">환영합니다, {{ user }}님!</div>
+    <div class="form-body">
+      <!-- 메뉴 항목 -->
+      <div class="btn-group">
+        <a href="{{ url_for('match_register') }}" class="btn primary">경기 매치 신청</a>
+        <a href="{{ url_for('stadium_register') }}" class="btn primary">경기장 등록</a>
+        <a href="{{ url_for('view_matches') }}" class="btn primary">경기 목록 보기</a>
+      </div>
+      <hr/>
+      <!-- 기존 등록된 경기 목록 -->
+      <p>등록된 경기 목록:</p>
+      {% if matches %}
+        <ul class="match-list">
+          {% for m in matches %}
+            <li>
+              <strong>{{ m.name }}</strong> |
+              {{ m.date }} |
+              {{ m.location }} |
+              {{ m.team1 }} vs {{ m.team2 }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>등록된 경기가 없습니다.</p>
+      {% endif %}
+      <div class="btn-group">
+        <a href="{{ url_for('logout') }}" class="btn secondary">로그아웃</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
